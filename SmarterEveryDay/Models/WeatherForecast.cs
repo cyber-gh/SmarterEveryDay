@@ -1,6 +1,6 @@
 using System;
 
-namespace SmarterEveryDay
+namespace SmarterEveryDay.Models
 {
     public class WeatherForecast
     {
