@@ -1,0 +1,51 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.logo-box {
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elements {
+    display: flex;
+    flex-direction: row;
+}
+
+.el {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    margin: 5px;
+    z-index: 100;
+    transition: color 0.5s;
+    cursor: pointer;
+}
+
+.el:hover {
+    color: orange;
+}
+
+.grid {
+    margin: 10px;
+}
+
+.template {
+    display: flex;
+    background-color: aqua;
+    height: 400px;
+    width: 400px;
+    max-width: 400px;
+    border: 1px solid red;
+}
