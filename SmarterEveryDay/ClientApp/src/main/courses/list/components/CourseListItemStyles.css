@@ -1,0 +1,8 @@
+.CourseListItemView:hover {
+    cursor: pointer;
+
+}
+
+.CourseListItemView {
+    margin: 10px;
+}

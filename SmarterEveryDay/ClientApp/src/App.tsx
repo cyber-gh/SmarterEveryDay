@@ -1,14 +1,23 @@
 import React from 'react';
 import "./style.css";
-import CorseList from "./main/CourseListView";
-import NavBar from "./main/components/NavBar";
+import CourseList from "./main/courses/list/CourseListView";
+import NavBar from "./main/navbar/NavBar";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import CourseDetailsView from "./main/courses/details/CourseDetailsView";
+
 
 function App() {
     return (
-        <div className="App">
-            <NavBar/>
-            <CorseList/>
-        </div>
+        <Router>
+            <div className="App">
+                <NavBar/>
+                <Router>
+                    <Route exact path={"/"} component={CourseList}/>
+                    <Route exact path={"/course"} component={CourseDetailsView}/>
+                </Router>
+
+            </div>
+        </Router>
     );
 }
 

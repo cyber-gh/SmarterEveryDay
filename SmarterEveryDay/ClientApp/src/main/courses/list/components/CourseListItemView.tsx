@@ -1,11 +1,14 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 import {makeStyles} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import {contrast} from "../../utils/Colors";
+import {contrast} from "../../../../utils/Colors";
+import {useHistory} from "react-router-dom";
+import "./CourseListItemStyles.css";
 
 const useStyles = makeStyles((theme) => ({
+
     paper: {
         margin: 'auto',
         maxWidth: 500,
@@ -57,12 +60,15 @@ export interface Props {
     tags: string[]
 }
 
-export default ({name, description, preview, tags}: Props) => {
+const CourseListItemView: FunctionComponent<Props> = ({name, description, preview, tags}: Props) => {
+    const history = useHistory();
     const classes = useStyles();
 
     return (
-        <div style={{margin: "10px"}}>
-            <Paper className={classes.paper}>
+        <div className="CourseListItemView">
+            <Paper className={classes.paper} onClick={() => {
+                history.push("/course")
+            }}>
                 <Grid>
                     <img src={preview} alt={'Just an image'} className={classes.img}/>
                     <div className={classes.textContainer}>
@@ -78,3 +84,5 @@ export default ({name, description, preview, tags}: Props) => {
         </div>
     );
 }
+
+export default CourseListItemView;
